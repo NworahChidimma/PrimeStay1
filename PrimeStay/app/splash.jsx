@@ -21,7 +21,7 @@ return(
 
            <Image
            style={{width:width*.5, height:height*.5, alignSelf:"center", marginTop:height*.2}}
-            source={require("../assets/images/PrimeStay-logo.png")}></Image>
+            source={require("../assets/images/PrimeStay-Logo.png")}></Image>
 
             <Text
              style={{fontSize:40, marginBottom:12, alignSelf:'center', fontFamily:"regular", color:"rgb(12, 66, 94)"}}>
