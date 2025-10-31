@@ -1,21 +1,11 @@
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  Text,
-  Image,
-  FlatList,
-  TextInput,
-  TouchableOpacity,
-  Dimensions,
-  Pressable,
-} from "react-native";
+import {View,Text,TouchableOpacity, Dimensions} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { router } from "expo-router";
 import { auth } from "./firebase";
-import LogIn from "./auth/login";
+
+
 export default function Profile() {
   const { width, height } = Dimensions.get("screen");
   const navigation = useNavigation()
@@ -23,7 +13,7 @@ export default function Profile() {
     auth
     .signOut()
     .then(() =>{
-        router.push('/auth/login')
+        router.push('./login')
     })
     .catch(error =>alert(error.message))
 

@@ -1,14 +1,13 @@
-import { useEffect } from "react"
 import {ImageBackground, Text, View, Image, Dimensions } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { router } from "expo-router"
-import LogIn from "./auth/login"
+import Onboarding from "./Onboarding"
 
 
 export default function Splash() {  
 
      setTimeout( () =>{
-        router.navigate('./login')
+        router.navigate('./Onboarding')
      }, 3000)
 
      const {width, height} = Dimensions.get('screen') 

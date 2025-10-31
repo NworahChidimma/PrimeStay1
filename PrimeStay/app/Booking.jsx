@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Image,
-  ScrollView,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
+import {View,Text,FlatList,StyleSheet,Image,ScrollView,Dimensions,TouchableOpacity,} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocalSearchParams } from "expo-router";
@@ -37,7 +28,7 @@ const BookingScreen = () => {
   }
 
   return (
-    <ScrollView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>My Bookings ({bookings.length})</Text>
       </View>
@@ -100,7 +91,7 @@ const BookingScreen = () => {
           </View>
         )}
       />
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 

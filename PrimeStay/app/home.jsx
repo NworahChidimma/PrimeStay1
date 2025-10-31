@@ -210,6 +210,13 @@ const savedHotels = useSelector((state) => state.booking.saved || []);
             )}
           />
         </View>
+
+        <View style={{backgroundColor:"rgb(12,66,94)", alignSelf:"center", marginBottom:height*.4}}>
+          <Text style={{color:"white", fontSize:20, padding:16}}>Book with ease</Text>
+        </View>
+        
+
+
       </ScrollView>
     </SafeAreaView>
   );

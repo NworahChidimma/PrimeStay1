@@ -44,7 +44,7 @@ if (savedHotels.length === 0) {
 
 
 return(
-   <ScrollView>
+  <SafeAreaView>
     <View style={styles.header}>
       <Text style={styles.headerTitle}>Saved</Text>
     </View>
@@ -113,8 +113,7 @@ return(
             </View>
           )}
         />
-
-   </ScrollView>
+        </SafeAreaView>
 )
 }
 

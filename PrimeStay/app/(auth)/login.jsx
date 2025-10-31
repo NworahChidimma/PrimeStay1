@@ -6,8 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
  import { useState, useEffect } from "react";
   import Feather from '@expo/vector-icons/Feather';
   import { router, useNavigation } from "expo-router";
-  import Home from '../home'
-  import StackNavigator from "../StackNavigator";
+import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
     import {auth} from '../firebase'
   
 
@@ -29,13 +28,15 @@ const {width,height}= Dimensions.get("screen")
 
 
   const handleLogin = () => {
-    auth
-    .signInWithEmailAndPassword(email,password)
-    .then(userCredentials => {
-      const user =userCredentials.user
-      console.log('logged in with', user.email)
-    })
-    .catch(error => Alert.alert("Invalid Credentials"))
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user
+        console.log('logged in with', user.email)
+      })
+      .catch((error) => {
+        Alert.alert("Login Error", "Invalid Credentials")
+        console.error(error)
+      })
   }
    
   return (

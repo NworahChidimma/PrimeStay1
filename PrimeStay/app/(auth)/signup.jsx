@@ -1,10 +1,12 @@
 import {Text, View, ScrollView, Image, Dimensions, TextInput, StyleSheet,
-   TouchableOpacity, Pressable} from "react-native";
+   TouchableOpacity, Pressable,
+   KeyboardAvoidingView} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
  import { useState, useEffect } from "react";
  import Feather from '@expo/vector-icons/Feather';
  import { router } from "expo-router";
   import {auth} from '../firebase'
+  import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
   export default function Signup() {
@@ -15,20 +17,20 @@ const {width,height}= Dimensions.get("screen")
 
 
   const handleSignUp = () => {
-    auth
-    .createUserWithEmailAndPassword(email,password)
-    .then(userCredentials => {
-      const user =userCredentials.user
-      console.log(user)
-    })
-    .catch(error => alert(error.message))
-  }
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log('User created:', user.email);
+      })
+      .catch((error) => alert(error.message));
+  };
 
   
 
   return (
     <ScrollView style={{marginHorizontal:15}}>
       <SafeAreaView>
+        <KeyboardAvoidingView>
         <Text style={{fontSize:18, fontWeight:"300", textAlign:"center", margin:5}}>Sign-up</Text>
         <View style={styles.line}>
         </View>
@@ -105,6 +107,7 @@ const {width,height}= Dimensions.get("screen")
             </Text>
            </TouchableOpacity>
 
+           </KeyboardAvoidingView>
     </SafeAreaView>
     </ScrollView>
   );
