@@ -113,7 +113,7 @@ return(
             </View>
           )}
         />
-        </SafeAreaView>
+         </SafeAreaView>
 )
 }
 

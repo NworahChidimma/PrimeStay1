@@ -18,7 +18,7 @@ export const SavedSlice = createSlice({
       if (hotelIndex >= 0) {
         state.saved.splice(hotelIndex, 1);
       } else {
-        state.saved.push(action.payload);
+         state.saved.push(action.payload);
       }
     },
     removeSaved: (state, action) => {

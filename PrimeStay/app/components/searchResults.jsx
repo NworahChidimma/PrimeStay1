@@ -18,7 +18,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const SearchResults = ({data, input, setInput,}) => {
     return(
-        <View style={{padding:25}}>
+        <View  style={{padding:25}}>
             <FlatList
              data={data} 
               keyExtractor={(item) => item.id.toString()}

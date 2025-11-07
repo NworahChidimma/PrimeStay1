@@ -119,7 +119,7 @@ const savedHotels = useSelector((state) => state.booking.saved || []);
   // };
 
 
-    const isHotelSaved = (hotelId) => {
+    const  isHotelSaved = (hotelId) => {
     if (!savedHotels || !Array.isArray(savedHotels)) return false;
     return savedHotels.some(h => h.id === hotelId);
   };

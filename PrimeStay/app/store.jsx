@@ -3,6 +3,6 @@ import SavedReducer from './SavedReducer'
 
 export default  configureStore({
     reducer:{
-        booking:SavedReducer,
+        booking: SavedReducer,
     }
 })

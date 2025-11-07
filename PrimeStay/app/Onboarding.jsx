@@ -20,7 +20,7 @@ const slides = [
     id: "1",
     title: "Welcome to PrimeStay",
     description: "Comfort in stay like no other",
-    image: require("../assets/images/Onboarding1.png"),
+    image : require("../assets/images/Onboarding1.png"),
   },
   {
     id: "2",

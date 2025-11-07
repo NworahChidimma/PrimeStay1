@@ -6,7 +6,7 @@ import { router } from "expo-router";
 import { auth } from "./firebase";
 
 
-export default function Profile() {
+export  default function Profile() {
   const { width, height } = Dimensions.get("screen");
   const navigation = useNavigation()
   const handleSignOut =() =>{

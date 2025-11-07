@@ -19,7 +19,7 @@ export default function StackNavigator(){
     
 
 
-      const Tab = createBottomTabNavigator();
+      const Tab  = createBottomTabNavigator();
       const Stack = createNativeStackNavigator();
     
       function BottomTabs() {

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import {useFonts} from "expo-font"
 import { Provider } from 'react-redux'
 import store from './store'
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import  AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 

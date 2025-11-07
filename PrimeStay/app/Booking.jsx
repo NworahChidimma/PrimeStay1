@@ -61,7 +61,7 @@ const BookingScreen = () => {
                   style={{
                     padding: 4,
                     flexDirection: "row",
-                    justifyContent: "space-between",
+                    justifyContent : "space-between",
                   }}
                 >
                   

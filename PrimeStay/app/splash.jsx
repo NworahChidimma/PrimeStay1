@@ -18,7 +18,7 @@ export default function Splash() {
      const localImage = require('../assets/images/background.jpg') 
      
 return(
-    <SafeAreaView style={{justifyContent:"center", flex:1, alignItems:"center",}}>
+    <SafeAreaView style={{justifyContent :"center", flex:1, alignItems:"center",}}>
            <ImageBackground style={{flex:1, width:width, height:height}}
            source={localImage}>
 
