@@ -76,7 +76,7 @@ export default function RootLayout() {
         <Stack.Screen options={{headerShown: false}} name="login" />
         <Stack.Screen options={{headerShown: false}} name="splash" />
         <Stack.Screen name="home" />
-        <Stack.Screen name="(auth)"/>
+        <Stack.Screen name="auth"/>
         <Stack.Screen name="StackNavigator" />
         <Stack.Screen name="searchScreen" />
         <Stack.Screen name="CardDetails" />
