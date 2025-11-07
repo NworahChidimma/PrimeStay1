@@ -4,54 +4,72 @@ import React, { useEffect, useState } from "react";
 import {useFonts} from "expo-font"
 import { Provider } from 'react-redux'
 import store from './store'
-import  AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as SplashScreen from 'expo-splash-screen';
 
-
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [isAppFirstLaunched, setIsAppfirstLaunched] = useState(null)
-    const [splash, setSplash] = useState(true)
-     const router = useRouter()
-    const [loaded, error] = useFonts({
-      regular: require("../assets/fonts/Poppins/Poppins-Black.ttf")
-    })
+  const [splash, setSplash] = useState(true)
+  const router = useRouter()
+  
+  const [fontsLoaded, fontError] = useFonts({
+    'Poppins-Regular': require("../assets/fonts/Poppins/Poppins-Regular.ttf"),
+    'Poppins-Bold': require("../assets/fonts/Poppins/Poppins-Bold.ttf"),
+    'Poppins-Black': require("../assets/fonts/Poppins/Poppins-Black.ttf"),
+  })
 
-     useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setSplash(false)
     }, 5000)
     
-    return () => clearTimeout(timer) // Clean up timer
+    return () => clearTimeout(timer)
   }, [])
 
-   
   useEffect(() => {
     const checkFirstLaunch = async () => {
-      const appData = await AsyncStorage.getItem("isAppFirstLaunched");
-      if (appData == null) {
-        setIsAppfirstLaunched(true);
-        await AsyncStorage.setItem("isAppFirstLaunched", "false");
-      } else {
+      try {
+        const appData = await AsyncStorage.getItem("isAppFirstLaunched")
+        if (appData == null) {
+          setIsAppfirstLaunched(true);
+          await AsyncStorage.setItem("isAppFirstLaunched", "false")
+        } else {
+          setIsAppfirstLaunched(false)
+        }
+      } catch (error) {
+        console.error("Error checking first launch:", error)
         setIsAppfirstLaunched(false);
       }
     };
-    checkFirstLaunch();
-  }, []);
+    checkFirstLaunch()
+  }, [])
 
   useEffect(() => {
-    if (!splash && loaded && isAppFirstLaunched !== null) {
+    if (fontsLoaded || fontError) {
+      SplashScreen.hideAsync()
+    }
+  }, [fontsLoaded, fontError])
+
+  useEffect(() => {
+    if (!splash && fontsLoaded && isAppFirstLaunched !== null) {
       if (isAppFirstLaunched) {
-        router.replace("/Onboarding");
+        router.replace("/Onboarding")
       } else {
-        router.replace("/login");
+        router.replace("/login")
       }
     }
-  }, [splash, loaded, isAppFirstLaunched]);
+  }, [splash, fontsLoaded, isAppFirstLaunched])
 
-  if (splash || !loaded || isAppFirstLaunched === null) {
-    return <Splash/>
+  if (fontError) {
+    console.error("Font loading error:", fontError)
   }
 
+  if (splash || !fontsLoaded || isAppFirstLaunched === null) {
+    return <Splash />
+  }
   return(
        <Provider store={store}>
       <Stack screenOptions={{headerShown: false}}>
