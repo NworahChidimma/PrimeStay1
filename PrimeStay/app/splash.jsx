@@ -1,14 +1,18 @@
 import {ImageBackground, Text, View, Image, Dimensions } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { router } from "expo-router"
-import Onboarding from "./Onboarding"
+import { useEffect } from "react";
 
 
 export default function Splash() {  
 
-     setTimeout( () =>{
-        router.navigate('./Onboarding')
-     }, 3000)
+    //  useEffect(() => {
+    // const timer = setTimeout(() => {
+    //   router.replace("/Onboarding");
+    // }, 3000);
+
+//     return () => clearTimeout(timer);
+//   }, []);
 
      const {width, height} = Dimensions.get('screen') 
      const localImage = require('../assets/images/background.jpg') 
@@ -19,7 +23,7 @@ return(
            source={localImage}>
 
            <Image
-           style={{width:width*.5, height:height*.5, alignSelf:"center", marginTop:height*.2}}
+           style={{width:width*.3, height:height*.3, alignSelf:"center", marginTop:height*.2}}
             source={require("../assets/images/PrimeStay-Logo.png")}></Image>
 
             <Text

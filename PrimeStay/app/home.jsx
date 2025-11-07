@@ -1,14 +1,4 @@
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  Text,
-  Image,
-  FlatList,
-  TextInput,
-  TouchableOpacity,
-  Dimensions,
-  Pressable,
+import {View,ScrollView,StyleSheet,Text,Image,FlatList,TextInput,TouchableOpacity,Dimensions,Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
@@ -211,8 +201,14 @@ const savedHotels = useSelector((state) => state.booking.saved || []);
           />
         </View>
 
-        <View style={{backgroundColor:"rgb(12,66,94)", alignSelf:"center", marginBottom:height*.4}}>
-          <Text style={{color:"white", fontSize:20, padding:16}}>Book with ease</Text>
+        <View style={{flexDirection:"row", justifyContent:"space-between", marginHorizontal:width*.06}}>
+        <View style={{backgroundColor:"rgb(12,66,94)", alignSelf:"center", marginBottom:height*.4, height:height*.15}}>
+          <Text style={{color:"white", fontSize:20, padding:16, marginTop:height*.03}}>Book with ease</Text>
+        </View>
+
+         <View style={{ borderWidth:2, borderColor:"rgb(12,66,94)", alignSelf:"center", marginBottom:height*.4, height:height*.15}}>
+          <Text style={{color:"rgb(12,66,94)", fontSize:20, padding:16, marginTop:height*.02, maxWidth:width*.4}}>Discover luxury hotels</Text>
+        </View>
         </View>
         
 

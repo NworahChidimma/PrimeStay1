@@ -20,19 +20,19 @@ const slides = [
     id: "1",
     title: "Welcome to PrimeStay",
     description: "Comfort in stay like no other",
-    image: require("../assets/images/welcome.jpg"),
+    image: require("../assets/images/Onboarding1.png"),
   },
   {
     id: "2",
     title: "Easy booking",
     description: "Book room and pay from the comfort of your home",
-    image: require("../assets/images/booking.jpg"),
+    image: require("../assets/images/Onboarding2.png"),
   },
   {
     id: "3",
     title: "Comfort",
     description: "You get to pick out a place best suited for you!",
-    image: require("../assets/images/accommodation.jpg"),
+    image: require("../assets/images/Onboarding3.png"),
   },
 ];
 

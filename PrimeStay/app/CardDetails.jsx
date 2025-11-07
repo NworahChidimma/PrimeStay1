@@ -1,17 +1,4 @@
-import {
-  View,
-  ScrollView,
-  StyleSheet,
-  Text,
-  Image,
-  FlatList,
-  TextInput,
-  TouchableOpacity,
-  Dimensions,
-  Pressable,
-  ImageBackground,
-  StatusBar,
-} from "react-native";
+import {View,ScrollView,StyleSheet,Text,TouchableOpacity, Dimensions,ImageBackground, StatusBar,} from "react-native";
 import { router, useLocalSearchParams } from 'expo-router';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";

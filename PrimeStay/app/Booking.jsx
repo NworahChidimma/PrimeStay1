@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {View,Text,FlatList,StyleSheet,Image,ScrollView,Dimensions,TouchableOpacity,} from "react-native";
+import {View,Text,FlatList,StyleSheet,Image,Dimensions,TouchableOpacity,} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocalSearchParams } from "expo-router";
 import { removeBooking } from './SavedReducer'
+
 
 const BookingScreen = () => {
   const { width, height } = Dimensions.get("screen");
@@ -51,7 +52,7 @@ const BookingScreen = () => {
                   }}
                   source={{ uri: item.hotel.image }}
                 />
-                
+              
                 <Text style={{fontSize: 12, fontWeight: "bold", marginStart: 10,marginTop:height*.01}}>{item.hotel.name}</Text>
                
                </View>
